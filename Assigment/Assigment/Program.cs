@@ -59,14 +59,14 @@ namespace Assigment
 
                 switch (ct)
                 {
-                    case "1": pt.themLienHe(); break;
-                    case "2": pt.SuaSV(); break;
+                    case "1": pt.ThemLienHe(); break;
+                    case "2": pt.SuaSv(); break;
                     case "3": pt.XoaLienHe(); break;
-                    case "4": pt.inra(); break;
-                    case "5": pt.timKiemDB(); break;
-                    case "6": pt.TimkiemgandungTEN(); break;
-                    case "7": pt.TimKiemDanDungSDT(); break;
-                    case "8": pt.sapxepnguoichonDB(); break;
+                    case "4": pt.Inra(); break;
+                    case "5": pt.TimKiemDb(); break;
+                    case "6": pt.TimkiemgandungTen(); break;
+                    case "7": pt.TimKiemDanDungSdt(); break;
+                    case "8": pt.SapxepnguoichonDb(); break;
                     case "9":
                         Console.WriteLine(" bye bye ");
                         Environment.Exit(9); break;

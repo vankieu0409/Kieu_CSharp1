@@ -1,10 +1,8 @@
 ﻿ using System;
-using System.CodeDom.Compiler;
-using System.Collections.Generic;
+ using System.Collections.Generic;
 using System.Linq;
-using System.Net.Sockets;
 
-namespace Assigment
+ namespace Assigment
 {
     //Các chức năng chương trình cần có:
     //THÊM - SỬA - XÓA NGƯỜI TRONG DANH BẠ
@@ -16,13 +14,13 @@ namespace Assigment
     //SẮP XẾP DANH BẠ THEO NGƯỢC VÀ XUÔI DO NGƯỜI DÙNG CHỌN
     public class FunctionsDanhBa
     {
-        private List<DanhBa> _lstDanhBas;
+        private List<DanhBa> lstDanhBas;
         private DanhBa nguoi = new DanhBa();// Danh Bạ(): là contructor có tham số
-        private string _input;
+        private string input;
 
         public FunctionsDanhBa()
         {
-            _lstDanhBas = new List<DanhBa>();
+            lstDanhBas = new List<DanhBa>();
             DanhBa nguoi1 = new DanhBa("Nguyễn", "Văn", "Kiều", 1998, "Nam", "0382802345", "0857326448",
                 " vankieu0409@gmail.com", "Hiền Huynh");
             DanhBa nguoi2 = new DanhBa("Lê", "Thị", "Phương", 1998, "Nữ", "0389062345", "08573209006",
@@ -53,29 +51,29 @@ namespace Assigment
                 "thuysell@gmail.com", " CEO- Đồ gia dụng An Phát");
             DanhBa nguoi15 = new DanhBa(" Nguyễn", " Thị", "Thúy", 1999, "Nữ", "0879645213", "0956821473",
                 "thuyhiep@gmail.com", "Trưởng phòng Điều hành cty Du Lịch Âu Việt");
-            _lstDanhBas.Add(nguoi1);
-            _lstDanhBas.Add(nguoi2);
-            _lstDanhBas.Add(nguoi3);
-            _lstDanhBas.Add(nguoi4);
-            _lstDanhBas.Add(nguoi5);
-            _lstDanhBas.Add(nguoi6);
-            _lstDanhBas.Add(nguoi7);
-            _lstDanhBas.Add(nguoi8);
-            _lstDanhBas.Add(nguoi9);
-            _lstDanhBas.Add(nguoi10);
-            _lstDanhBas.Add(nguoi11);
-            _lstDanhBas.Add(nguoi12);
-            _lstDanhBas.Add(nguoi13);
-            _lstDanhBas.Add(nguoi14);
-            _lstDanhBas.Add(nguoi15);
+            lstDanhBas.Add(nguoi1);
+            lstDanhBas.Add(nguoi2);
+            lstDanhBas.Add(nguoi3);
+            lstDanhBas.Add(nguoi4);
+            lstDanhBas.Add(nguoi5);
+            lstDanhBas.Add(nguoi6);
+            lstDanhBas.Add(nguoi7);
+            lstDanhBas.Add(nguoi8);
+            lstDanhBas.Add(nguoi9);
+            lstDanhBas.Add(nguoi10);
+            lstDanhBas.Add(nguoi11);
+            lstDanhBas.Add(nguoi12);
+            lstDanhBas.Add(nguoi13);
+            lstDanhBas.Add(nguoi14);
+            lstDanhBas.Add(nguoi15);
 
         }
 
-        public void themLienHe() //THÊM -  Liên Hệ vào TRONG DANH BẠ
+        public void ThemLienHe() //THÊM -  Liên Hệ vào TRONG DANH BẠ
         {
             Console.Write(" mời nhập Số người cần thêm: ");
-            _input = Console.ReadLine();
-            for (int i = 0; i < Convert.ToInt32(_input); i++)
+            input = Console.ReadLine();
+            for (int i = 0; i < Convert.ToInt32(input); i++)
             {
                 nguoi = new DanhBa();
 
@@ -98,45 +96,45 @@ namespace Assigment
                 Console.Write(" mời bạn nhập Ghi Chú:");
                 nguoi.GhiChu = Console.ReadLine();
 
-                _lstDanhBas.Add(nguoi);
+                lstDanhBas.Add(nguoi);
 
             }
 
         }
-        public void timKiemDB() // tìm kiếm bằng tên hoặc số điện thoại
+        public void TimKiemDb() // tìm kiếm bằng tên hoặc số điện thoại
         {
             Console.Write(" mời bạn Nhập Tên hoặc số điện thoại: ");
-            _input = Console.ReadLine();
-            int temp = getIndex(_input);
+            input = Console.ReadLine();
+            int temp = GetIndex(input);
             if (temp == -1)
             {
                 Console.WriteLine(" Liện hệ Không tồn tại");
                 return;
             }
-            _lstDanhBas[temp].InRaManHinh();
+            lstDanhBas[temp].InRaManHinh();
         }
 
 
         public void XoaLienHe() //xóa theo index--  XÓA Liên Hệ TRONG DANH BẠ
         {
             Console.WriteLine(" mời bạn Nhập tên Liên hệ cần tìm: ");
-            _input = Console.ReadLine();
-            int temp = getIndex(_input);
+            input = Console.ReadLine();
+            int temp = GetIndex(input);
             if (temp == -1)
             {
                 Console.WriteLine("            Liên Hệ không tồn tại,");
                 return;
             }
 
-            _lstDanhBas.RemoveAt(temp);
+            lstDanhBas.RemoveAt(temp);
             Console.WriteLine("            Xóa Thành Công");
         }
 
-        public void SuaSV() //sửa theo index //T SỬA Thông tin Liên hệ TRONG DANH BẠ
+        public void SuaSv() //sửa theo index //T SỬA Thông tin Liên hệ TRONG DANH BẠ
         {
             Console.WriteLine(" Mời bạn Nhập tên hoặc số điện thoại LIên Hệ mà bạn Muốn sửa:  ");
-            _input = Console.ReadLine();
-            int temp = getIndex(_input);
+            input = Console.ReadLine();
+            int temp = GetIndex(input);
             if (temp == -1)
             {
                 Console.WriteLine(" Liên hệ không tồn tại,");
@@ -155,46 +153,46 @@ namespace Assigment
                                   " 7. ghi chú\n" +
                                   " 8. thoát! Không sửa nữa.");
                 Console.Write(" mời bạn Chọn:  ");
-                _input = Console.ReadLine();
+                input = Console.ReadLine();
                 Console.WriteLine("\n");
-                switch (_input)
+                switch (input)
                 {
                     case "1":
-                        Console.Write(" Họ tên của " + _lstDanhBas[temp] + ": " + _lstDanhBas[temp].Ho + " " + _lstDanhBas[temp].TenDem + " " + _lstDanhBas[temp].Ten + "\n" +
+                        Console.Write(" Họ tên của " + lstDanhBas[temp] + ": " + lstDanhBas[temp].Ho + " " + lstDanhBas[temp].TenDem + " " + lstDanhBas[temp].Ten + "\n" +
                                           " Bạn muốn sửa thành: \n " +
                                           " họ: ");
-                        _lstDanhBas[temp].Ho = Console.ReadLine();
+                        lstDanhBas[temp].Ho = Console.ReadLine();
                         Console.Write(" Tên Đệm: ");
-                        _lstDanhBas[temp].TenDem = Console.ReadLine();
+                        lstDanhBas[temp].TenDem = Console.ReadLine();
                         Console.Write(" Tên: ");
-                        _lstDanhBas[temp].Ten = Console.ReadLine();
+                        lstDanhBas[temp].Ten = Console.ReadLine();
                         break;
 
                     case "2":
-                        Console.Write(" Năm Sinh cũ của " + _lstDanhBas[temp].Ten + ": " + _lstDanhBas[temp].NamSinh + "\n" +
+                        Console.Write(" Năm Sinh cũ của " + lstDanhBas[temp].Ten + ": " + lstDanhBas[temp].NamSinh + "\n" +
                                       " Bạn muốn sửa thành: ");
-                        _lstDanhBas[temp].NamSinh = Int32.Parse(Console.ReadLine()); break;
+                        lstDanhBas[temp].NamSinh = Int32.Parse(Console.ReadLine()); break;
                     case "3":
-                        Console.Write(" Giới Tính cũ của " + _lstDanhBas[temp].Ten + ": " + _lstDanhBas[temp].GioiTinh + "\n" +
+                        Console.Write(" Giới Tính cũ của " + lstDanhBas[temp].Ten + ": " + lstDanhBas[temp].GioiTinh + "\n" +
                                       " Bạn muốn sửa thành: ");
-                        _lstDanhBas[temp].GioiTinh = Console.ReadLine(); break;
+                        lstDanhBas[temp].GioiTinh = Console.ReadLine(); break;
                     case "4":
-                        Console.Write(" SĐT1 cũ của " + _lstDanhBas[temp].Ten + ": " + _lstDanhBas[temp].Sdt1 + "\n" +
+                        Console.Write(" SĐT1 cũ của " + lstDanhBas[temp].Ten + ": " + lstDanhBas[temp].Sdt1 + "\n" +
                                       " Bạn muốn sửa thành: ");
-                        _lstDanhBas[temp].Sdt1 = Console.ReadLine(); break;
+                        lstDanhBas[temp].Sdt1 = Console.ReadLine(); break;
                     case "5":
-                        Console.Write(" SĐT2 cũ của " + _lstDanhBas[temp].Ten + ": " + _lstDanhBas[temp].Ssdt2 + "\n" +
+                        Console.Write(" SĐT2 cũ của " + lstDanhBas[temp].Ten + ": " + lstDanhBas[temp].Ssdt2 + "\n" +
                                       " Bạn muốn sửa thành: ");
-                        _lstDanhBas[temp].Ssdt2 = Console.ReadLine(); break;
+                        lstDanhBas[temp].Ssdt2 = Console.ReadLine(); break;
                     case "6":
-                        Console.Write(" Email cũ của " + _lstDanhBas[temp].Ten + ": " + _lstDanhBas[temp].Email + "\n" +
+                        Console.Write(" Email cũ của " + lstDanhBas[temp].Ten + ": " + lstDanhBas[temp].Email + "\n" +
                                       " Bạn muốn sửa thành: ");
-                        _lstDanhBas[temp].Email = Console.ReadLine();
+                        lstDanhBas[temp].Email = Console.ReadLine();
                         break;
                     case "7":
-                        Console.Write(" Ghi chú cũ của " + _lstDanhBas[temp].Ten + ": " + _lstDanhBas[temp].GhiChu + "\n" +
+                        Console.Write(" Ghi chú cũ của " + lstDanhBas[temp].Ten + ": " + lstDanhBas[temp].GhiChu + "\n" +
                                       " Bạn muốn sửa thành: ");
-                        _lstDanhBas[temp].GhiChu = Console.ReadLine();
+                        lstDanhBas[temp].GhiChu = Console.ReadLine();
                         ;
                         break;
                     case "8":
@@ -205,40 +203,40 @@ namespace Assigment
 
                 }
 
-            } while (!(_input == "8"));// toán tử phủ định. dùng vong do- while
+            } while (!(input == "8"));// toán tử phủ định. dùng vong do- while
         }
-        public void inra()
+        public void Inra()
         {
             Console.WriteLine("----------- Danh bạ của bạn ---------- " +
                               "\n");
-            inDS(_lstDanhBas);
+            InDs(lstDanhBas);
         }
 
 
-        public void sapxepnguoichonDB()//chức năng Sắp Xếp
+        public void SapxepnguoichonDb()//chức năng Sắp Xếp
         {
             Console.Write(" mời bạn chọn cách hiển thị được Sắp xếp theo:\n" +
                               " 1. Tên\n" +
                               " 2. Năm sinh\n" +
                               " Mời bạn chọn: ");
-            _input = Console.ReadLine();
+            input = Console.ReadLine();
             Console.WriteLine("\n");
-            switch (_input)
+            switch (input)
             {
                 case "1":
                     Console.Write(" Mời bạn chọn cách sắp xếp Tên theo thứ tự AlphaB: \n" +
                                       " 1. Xuôi\n" +
                                       " 2. Ngược\n" +
                                       " Mời bạn chọn: ");
-                    _input = Console.ReadLine();
+                    input = Console.ReadLine();
                     Console.WriteLine("\n");
-                    switch (_input)
+                    switch (input)
                     {
                         case "1":
-                            inDS(_lstDanhBas.OrderBy(c => c.Ten).ToList());
+                            InDs(lstDanhBas.OrderBy(c => c.Ten).ToList());
                             break;
                         case "2":
-                            inDS(_lstDanhBas.OrderByDescending(c => c.Ten).ToList());
+                            InDs(lstDanhBas.OrderByDescending(c => c.Ten).ToList());
                             break;
                     };
                     break;
@@ -247,16 +245,16 @@ namespace Assigment
                                       " 1. từ già đến trẻ \n" +
                                       " 2. từ trẻ đến già \n" +
                                       " Mời bạn chọn: ");
-                    _input = Console.ReadLine();
+                    input = Console.ReadLine();
                     Console.WriteLine("\n");
-                    switch (_input)
+                    switch (input)
                     {
                         case "1":
-                            inDS(_lstDanhBas.OrderBy(c => c.NamSinh).ToList());
+                            InDs(lstDanhBas.OrderBy(c => c.NamSinh).ToList());
                             break;
                             
                         case "2":
-                            inDS(_lstDanhBas.OrderByDescending(c => c.NamSinh).ToList());
+                            InDs(lstDanhBas.OrderByDescending(c => c.NamSinh).ToList());
                             break;
                     };
                     break;
@@ -265,7 +263,7 @@ namespace Assigment
           
         }
         // phương thức 1: tái sử dụng khị in ra a=màn hình
-        private void inDS(List<DanhBa> danhBas)
+        private void InDs(List<DanhBa> danhBas)
         {
             foreach (var x in danhBas)// x là phần tử trong danh sach => x=nguoi
             {
@@ -294,19 +292,19 @@ namespace Assigment
         }
 
         //PHương thức 2: Lấy Index của đối rượng trong danh sách
-        private int getIndex(string msv) // Phương thức trả về số nguyên ---- dùng để tìm vị trí
+        private int GetIndex(string msv) // Phương thức trả về số nguyên ---- dùng để tìm vị trí
         {
-            for (int i = 0; i < _lstDanhBas.Count; i++)
+            for (int i = 0; i < lstDanhBas.Count; i++)
             {
-                if (_lstDanhBas[i].Ten == msv)
+                if (lstDanhBas[i].Ten == msv)
                 {
                     return i; //trả về vị trí của đối tượng cần tìm
                 }
-                else if (_lstDanhBas[i].Sdt1 == msv)
+                else if (lstDanhBas[i].Sdt1 == msv)
                 {
                     return i; //trả về vị trí của đối tượng cần tìm
                 }
-                else if (_lstDanhBas[i].Ssdt2 == msv)
+                else if (lstDanhBas[i].Ssdt2 == msv)
                 {
                     return i; //trả về vị trí của đối tượng cần tìm
                 }
@@ -314,11 +312,11 @@ namespace Assigment
             return -1;// Không tìm được mã trùng thì phải trả về số âm để không bị trùng với count_list
         }
 
-        public void TimkiemgandungTEN()
+        public void TimkiemgandungTen()
         {
             Console.WriteLine(" mời bạn nhập tên để tìm: ");
-            string _input = Console.ReadLine();
-            foreach (var x in _lstDanhBas.Where(c=>c.Ten.Contains(_input)))
+            string input = Console.ReadLine();
+            foreach (var x in lstDanhBas.Where(c=>c.Ten.Contains(input)))
             {
                 x.InRaManHinh();
                     Console.WriteLine("----------\n" +
@@ -326,11 +324,11 @@ namespace Assigment
             }
         }
 
-        public void TimKiemDanDungSDT()
+        public void TimKiemDanDungSdt()
         {
             Console.Write(" Mời Bạn Nhập số điện thoại gần đúng: ");
-            string _input = Console.ReadLine();
-            var lstTemp = _lstDanhBas.Where(c => c.Sdt1.Contains(_input)).ToList();
+            string input = Console.ReadLine();
+            var lstTemp = lstDanhBas.Where(c => c.Sdt1.Contains(input)).ToList();
             if (lstTemp.Count > 0)
             {
                 foreach (var x in lstTemp)
@@ -352,7 +350,7 @@ namespace Assigment
         public void SapXepKoin()// dùng sort
         {
             //_lstDanhBas.Sort((a,b) => a.Ten.CompareTo(b.Ten));
-            var listSapXep = from x in _lstDanhBas orderby x.Ten select x;
+            var listSapXep = from x in lstDanhBas orderby x.Ten select x;
 
         }
 
