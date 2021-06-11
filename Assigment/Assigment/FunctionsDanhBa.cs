@@ -193,7 +193,7 @@ using System.Linq;
                         Console.Write(" Ghi chú cũ của " + lstDanhBas[temp].Ten + ": " + lstDanhBas[temp].GhiChu + "\n" +
                                       " Bạn muốn sửa thành: ");
                         lstDanhBas[temp].GhiChu = Console.ReadLine();
-                        ;
+                        
                         break;
                     case "8":
                         Console.WriteLine(" oke Tạm biệt "); break;
