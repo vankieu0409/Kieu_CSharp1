@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CA44B062-D0C2-481F-8BBD-BB0AA981440C}</ProjectGuid>
+    <ProjectGuid>{25FE6802-AB58-4885-99BE-C69D30B16979}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_2._6_OOP__lLapTrinhHuongDoiTuong</RootNamespace>
-    <AssemblyName>2.6_OOP_ lLapTrinhHuongDoiTuong</AssemblyName>
+    <RootNamespace>ConsoleApp2</RootNamespace>
+    <AssemblyName>ConsoleApp2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,12 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GiaoVien.cs" />
-    <Compile Include="Meo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceGiaoVien.cs" />
-    <Compile Include="SinhVien2.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

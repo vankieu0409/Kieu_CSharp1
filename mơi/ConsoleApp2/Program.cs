@@ -1,23 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
-using System.Data;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace lab1_2.thayDUng
+namespace ConsoleApp2
 {
     class Program
     {
+
         static int siSo;
         static string[] ma, hoTen, namSinh;
 
         static void Main(string[] args)
         {
-            Console.OutputEncoding= Encoding.GetEncoding("UTF-8");
+            Console.OutputEncoding = Encoding.Unicode;
             menu();
         }
 
@@ -45,9 +42,10 @@ namespace lab1_2.thayDUng
                     default:
                         Console.WriteLine(" mời bạn chọn lại chương trình");
                         break;
-                    
+
                 }
 
+                
                 Console.WriteLine("--------------------");
                 Console.WriteLine("");
             } while (true);
@@ -71,11 +69,11 @@ namespace lab1_2.thayDUng
                 for (int i = 0; i < siSo; i++)
                 {
                     Console.WriteLine("\n" +
-                                      "Sinh viên thứ: " + (i + 1) + "\n");
-                    Console.Write(" Mã SInh viên: ");
+                                      "Người Yêu  thứ: " + (i + 1) + "\n");
+                    Console.Write(" Mã Người Yêu : ");
                     ma[i] = Console.ReadLine();
                     Console.WriteLine("");
-                    Console.Write(" Họ ten SInh Viên: ");
+                    Console.Write(" Họ ten Người Yêu : ");
                     hoTen[i] = Console.ReadLine();
                     Console.WriteLine("");
                     Console.Write(" năm Sinh: ");
@@ -86,19 +84,19 @@ namespace lab1_2.thayDUng
 
             // xuất danh sách
 
-            
+
         }
 
         static void xuatDanhSach()
         {
-            Console.WriteLine(" Danh Sách Sinh Viên: ");
+            Console.WriteLine(" Danh Sách Người Yêu: ");
             for (int i = 0; i < siSo; i++)
             {
                 Console.WriteLine("----------------------\n" +
-                                  "SInh viên thứ: "+(i+1));
-                Console.WriteLine(" Mã Sinh viên: " + ma[i]);
-                Console.WriteLine(" HỌ tên:  "+hoTen[i]);
-                Console.WriteLine(" năm Sinh: "+ namSinh[i]);
+                                  " Người Yêu thứ: " + (i + 1));
+                Console.WriteLine(" Mã Người Yêu: " + ma[i]);
+                Console.WriteLine(" HỌ tên:  " + hoTen[i]);
+                Console.WriteLine(" năm Sinh: " + namSinh[i]);
                 Console.WriteLine("");
 
             }

@@ -26,6 +26,7 @@ namespace Assigment
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
+            Console.InputEncoding=Encoding.UTF8;
             FunctionsDanhBa pt = new FunctionsDanhBa();//new FunctionsDanhBa() là contructor kiểm tra thì bấm Ctrl+ click vào vị trí
             string ct;
             Console.WriteLine("------ Chương trình thao tác với Danh bạ -------\n" +
@@ -38,25 +39,23 @@ namespace Assigment
                                   " 7. Tìm kiếm Số điện thoại gần đúng\n" +
                                   " 8. Sắp xếp Danh bạ \n" +
                                   " 9. thoát\n");
-            Console.Write(" Vui lòng chọn CT: ");
-            do
-            {
 
-                ct = Console.ReadLine();
-                if (checkSo(ct) == false)
-                {
-                    Console.Write(" cái bạn vừa nhập vào ô không phải số\n" +
-                                  " mời Bạn nhập lại dưới dạng số để chọn lại Chương trình: ");
-                }
-            } while (!checkSo(ct));
 
             Console.WriteLine("\n");
 
-
             do
             {
+                Console.Write(" Vui lòng chọn CT: ");
+                do
+                {
 
-
+                    ct = Console.ReadLine();
+                    if (checkSo(ct) == false)
+                    {
+                        Console.Write(" cái bạn vừa nhập vào ô không phải số\n" +
+                                      " mời Bạn nhập lại dưới dạng số để chọn lại Chương trình: ");
+                    }
+                } while (!checkSo(ct));
                 switch (ct)
                 {
                     case "1": pt.ThemLienHe(); break;
@@ -75,8 +74,8 @@ namespace Assigment
                 }
 
                 Console.WriteLine("------------------");
-
-            } while (true);
+                ct = "0";
+            } while (ct != "9");
 
 
         }
@@ -84,13 +83,13 @@ namespace Assigment
         public static bool checkSo(string text)
         {
             return Regex.IsMatch(text, @"^\d+$");
-            //^đầu chuỗi
+            //     ^ đầu chuỗi
 
-            //    \ d một chữ số
+            //    \d một chữ số
 
-            //    +một hoặc nhiều lần xuất hiện trước đó
+            //    + một hoặc nhiều lần xuất hiện trước đó
 
-            //    \ D ký tự không phải chữ số
+            //    \D ký tự không phải chữ số
 
             //    + một hoặc nhiều lần xuất hiện
 

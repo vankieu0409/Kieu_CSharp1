@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using _2._6_OOP__lLapTrinhHuongDoiTuong;
 
 namespace Bai_2._6_OOP_LapTrinhHuongDoiTuong
 {
@@ -40,31 +41,40 @@ namespace Bai_2._6_OOP_LapTrinhHuongDoiTuong
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.GetEncoding("UTF-8");
-            //Tôi là người không học OOP
-            //Yêu cầu lưu trữ 500 sinh viên - Tên, Năm Sinh, Quê quán
-            string ten, quequan;
-            int namsinh;
+            ////Tôi là người không học OOP
+            ////Yêu cầu lưu trữ 500 sinh viên - Tên, Năm Sinh, Quê quán
+            //string ten, quequan;
+            //int namsinh;
 
-            //Phần 1: Khai báo 1 đối tượng
-            SinhVien sv1; //Khai báo đối tượng
-            sv1 = new SinhVien(); //Khởi tạo 1 đối tượng sinh viên
-            SinhVien sv2 = new SinhVien(); //Khởi tạo 1 đối tượng sinh viên
+            ////Phần 1: Khai báo 1 đối tượng
+            //SinhVien sv1; //Khai báo đối tượng
+            //sv1 = new SinhVien(); //Khởi tạo 1 đối tượng sinh viên
+            //SinhVien sv2 = new SinhVien(); //Khởi tạo 1 đối tượng sinh viên
 
-            //Sử dụng contructor có tham số để khởi tạo đối tượng bao gồm cả giá trị bên trong
-            SinhVien sv3 = new SinhVien("Phương", "PH000", "HN", 79);
+            ////Sử dụng contructor có tham số để khởi tạo đối tượng bao gồm cả giá trị bên trong
+            //SinhVien sv3 = new SinhVien("Phương", "PH000", "HN", 79);
 
-            //Phần 2: Gán giá trị cho đối tượng
-            // sv1.name = "Phương";
-            // sv1.msv = "PH00532";
-            // sv1.truongHoc = "Bách khoa";
+            ////Phần 2: Gán giá trị cho đối tượng
+            //// sv1.name = "Phương";
+            //// sv1.msv = "PH00532";
+            //// sv1.truongHoc = "Bách khoa";
 
-            //Để gán giá trị cho thuộc tính private thì sử dụng Property
-            sv1.Name = "Phương";
+            ////Để gán giá trị cho thuộc tính private thì sử dụng Property
+            //sv1.Name = "Phương";
 
 
-            //Phần 3: In thuộc tính
-            // Console.WriteLine(sv1.name);
-            // Console.WriteLine(sv3.name);
+            ////Phần 3: In thuộc tính
+            //// Console.WriteLine(sv1.name);
+            //// Console.WriteLine(sv3.name);
+
+            ServiceGiaoVien gv = new ServiceGiaoVien();
+            int c;
+            do
+            {
+                
+            } while (true);
+
+
         }
 
         /*Tạo 10 đối tượng và gán giá trị cho đối tượng được tạo và phương thức in ra màn hình:

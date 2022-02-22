@@ -22,6 +22,8 @@ namespace Assigment
             
         }
 
+    
+
         public DanhBa(string sdt1, string ssdt2, string email, string ghiChu)
         {
             this.sdt1 = sdt1;
@@ -30,6 +32,7 @@ namespace Assigment
             this.ghiChu = ghiChu;
         }
 
+        
         public DanhBa(string ho, string tenDem, string ten, int namSinh, string gioiTinh, string sdt1, string ssdt2, string email, string ghiChu) : base(ho, tenDem, ten, namSinh, gioiTinh)
         {
             this.sdt1 = sdt1;

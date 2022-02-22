@@ -14,7 +14,8 @@ namespace test_lab3_4
         {
             _lstSinhViens = new List<SinhVien>();
         }
-        public SinhVien bai2TaodoiTuongDoNguoiDungNhapVao()
+
+        public void bai2TaodoiTuongDoNguoiDungNhapVao()
         {
             SinhVien sv1 = new SinhVien();
 
@@ -27,11 +28,8 @@ namespace test_lab3_4
             Console.Write(" mời bạn nhập điểm C#1: ");
             sv1.DiemCSharp = double.Parse(Console.ReadLine());
             Console.WriteLine("");
-
-
         }
 
-       
 
         public void themSinhVienList()
         {

@@ -45,6 +45,7 @@ THANG ĐIỂM LẤY ĐIỂM LAB:
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.GetEncoding("UTF-8");
+            Console.InputEncoding=Encoding.UTF8;
 
 
             int lenh;

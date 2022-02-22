@@ -209,7 +209,10 @@ using System.Linq;
         {
             Console.WriteLine("----------- Danh bạ của bạn ---------- " +
                               "\n");
-            InDs(lstDanhBas);
+            foreach (var VARIABLE in lstDanhBas)
+            {
+                VARIABLE.InRaManHinh();
+            }
         }
 
 
